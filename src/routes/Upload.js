@@ -1,12 +1,13 @@
 const express = require("express");
 const controler = require("../controllers/Upload");
+const upload = require("../controllers/CloudUpload");
 const { Logging } = require("../library/Logging");
 
 const router = express.Router();
 
 router.post(
   "/song/image",
-  controler.UserAvatarUpload.single('file'),
+  upload.SongImage.single("file"),
   (req, res) => {
     try {
         const { avatar } = controler.User
