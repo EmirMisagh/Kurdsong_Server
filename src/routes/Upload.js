@@ -6,11 +6,11 @@ const { Logging } = require("../library/Logging");
 const router = express.Router();
 
 router.post(
-  "/song/image",
-  upload.SongImage.single("file"),
+  "/user/avatar",
+  upload.UserAvatar.single("file"),
   (req, res) => {
     try {
-        const { avatar } = controler.User
+        const { avatar } = upload.User
         Logging.info(
             `Incomming -> Method: [${req.method}] - Image Name: [${avatar}] = Result: [Uploaded] - Status: [${res.statusCode}]`
           );
